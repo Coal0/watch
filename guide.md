@@ -215,7 +215,7 @@ class Database(Session):
 
     def __init__(self, access_level: str, database_path: str) -> None:
         """Constructor.
-        Creates a new session based on `access_level` and starts it.
+        Create a new session based on `access_level` and start it.
         Loads the database into a dictionary object.
         
         Arguments:

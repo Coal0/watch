@@ -1,8 +1,8 @@
 # Guide
 
 ### Abstract
-To restrict access to data based on time, we can use 'sessions'.<br />
-A session comes in any of three states:
+To restrict access to sensitive data, we can use 'sessions'.<br />
+A session can assume any of three states:
 
 * A session is *disabled*: it has not yet been started, but it has been initialized
 * A session is *alive*: it has been initialized and started and it hasn't yet expired
@@ -18,14 +18,11 @@ This guide will focus on getting you started with sessions by:
 ### Abstract | Code
 This module treats each session as a seperate `Session` class.<br />
 Each instance of this class can have a different duration and each behaves independently from one another.<br />
-If you need two sessions (e.g. one for administrators and one for users), you need to define both as seperate objects.<br />
 
 Sessions can run alongside your code, or as part of a class by subclassing `Session`.<br />
 Both cases are equally valid, but one may fit your project's style better than the other.<br />
 
 Code in this guide will be written to work in Python 3, but with little changes it should be compatible with Python 2 as well.<br />
-
-**This particular implementation of sessions does *not* periodically check if a session has expired.**
 
 <br />
 
@@ -51,7 +48,7 @@ bar = Session(0.5)
 
 ###### NOTE: sessions don't start when initialized, they must be explicitly started. This allows for dynamic start / expire cycles and makes sessions reusable.
 
-`foo` and `bar` will, respectively, when started, be alive for 10 and .5 seconds.<br />
+In this example, `foo` will be alive for 10 seconds and `bar` will expire after half a second.<br />
 To start a session, its `start_session` method must be called:
 
 ```python
@@ -89,8 +86,8 @@ session.has_expired   # True
 
 ---
     
-As you can imagine, functions that require the session to be alive could check `has_expired` each time they're called.<br />
-A predefined method for this is `require_session`. You can call it to check if the session is alive:
+Functions that depend on the session can check `has_expired` each time they're called.<br />
+Alternatively, you can 'require' the session to be alive by calling `require_session`:
 
 ```python
 >>> from session import Session
@@ -107,10 +104,11 @@ Traceback (most recent call last):
 ValueError: session expired 0 seconds ago
 ```
 
-As you can see, when a session has expired and `require_session` is called, a `ValueError` is raised telling you how long ago
+As you can see, when  session has expired and `require_session` is called, a `ValueError` is raised telling you how long ago
 the session expired.<br />
 
-If you want to know how much longer a session will be alive for, or how much time has passed since the session expired, you can check respectively `time_until_expiry` and `time_since_expiry`:
+The `time_until_expiry` property tells you how much longer the session will be alive for until it expires.<br />
+The `time_since_expiry` property tells you how long ago the session expired.
 
 ```python
 import time
@@ -137,7 +135,7 @@ This concludes the 'quickstart' introduction to this module.
 ### Usage | OOP
 ###### NOTE: the following sections assumes you are familiar with the basics of the `Session` class. If this is not the case, refer to the above section 'Usage | Side flow'.
 
-To conform to OOP principles, you can make a class inherit from `Session` and reference `self` as `Session` object.<br />
+To conform to OOP principles, you can also make a class inherit from `Session`.
 This may be more straightforward if you're implementing a class which depends on a session:
 
 ```python

@@ -3,15 +3,15 @@ Time-based sessions in Python 2 and 3
 
 ---
 
-Using watch, it's easy to restrict user access to files, databases and other protected data locations.<br />
+Using watch, it's easy to restrict access to sensitive databases and files.<br />
 Watch is compatible with Python 2 and 3 and has been tested on Python 2.7.1 as well as Python 3.6.0.<br />
 To get started with watch, check out [the guide](https://github.com/Coal0/watch/blob/master/guide.md).
 
 <br />
 
 ### Testing
-Testing can be done easily by running `test.py` [here](https://github.com/Coal0/watch/tree/master/tests).<br />
-It should work on both Python 2 and 3.
+It's easy to test watch by running `test.py` [here](https://github.com/Coal0/watch/tree/master/tests).<br />
+The tests should support Python 2 and 3.
 
 <br />
 
@@ -27,7 +27,7 @@ All bug reports must follow this format:
 * **Project version**: what version of watch were you using when you encountered the bug? [\*]
 * **Python version**: what version of Python were you using when you encountered the bug? [\*]
 * **Cause**: what were you doing before you encountered the bug? What triggered the bug? [\*]
-* **Problem**: paste the entire exception traceback **or**, in case the topic is "documentation error" or "security problem", describe the problem.
+* **Problem**: paste the entire exception traceback or describe the problem.
 * **Reproduction**: which steps must someone take to reproduce the bug? [\*]
 
 [\*] May be left blank if the topic is "documentation error" or "security problem"
@@ -47,13 +47,6 @@ Example bug report:
 ```
 Traceback (most recent call last):
   ...
-AttributeError: 'Session' object has no attribute '_session_expiry'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  ...
-    raise ValueError("session has not been started yet")
 ValueError: session has not been started yet
 ```
 

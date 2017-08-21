@@ -46,8 +46,6 @@ class Session:
 
     def expire_session(self):
         """Expire the session.
-        This method can be called at any time to manually expire
-        the session.
 
         Example:
         >>> session = Session(session_duration=60)
@@ -88,7 +86,6 @@ class Session:
     @property
     def time_until_expiry(self):
         """Return the time until the session expires, in seconds.
-        Time is returned as integer.
         
         Example:
         >>> session = Session(session_duration=60)
@@ -111,7 +108,6 @@ class Session:
     @property
     def time_since_expiry(self):
         """Return the time since the session expired, in seconds.
-        Time is returned as integer.
 
         Example:
         >>> session = Session(session_duration=60)

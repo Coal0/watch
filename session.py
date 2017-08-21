@@ -131,6 +131,7 @@ class Session:
     def require_session(self):
         """Require the session to be alive.
 
+        Example:
         >>> session = Session(session_duration=60)
         >>> <login>
         >>> session.start_session()

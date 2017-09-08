@@ -259,7 +259,7 @@ class Database(Session):
         try:
             self.require_session()
         except ValueError:
-            print("Your session has expired. Please login again.")
+            print("Your session has expired. Please log in again.")
             return
         try:
             self._database
@@ -291,7 +291,7 @@ class Database(Session):
         try:
             self.require_session()
         except ValueError:
-            print("Your session has expired. Please login again.")
+            print("Your session has expired. Please log in again.")
             return
         return self._database.get(key, "Key does not exist")
         
@@ -310,7 +310,7 @@ class Database(Session):
         try:
             self.require_session()
         except ValueError:
-            print("Your session has expired. Please login again.")
+            print("Your session has expired. Please log in again.")
             return
         if self._access_level != "admin":
             raise PermissionError("Only admins can modify the database.")

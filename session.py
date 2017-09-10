@@ -1,7 +1,9 @@
 import time
 
+__all__ = ["Session"]
 
-class Session:
+
+class Session(object):
     """Class representing a session.
     Methods:
     * __init__(): Set the session length (in seconds)

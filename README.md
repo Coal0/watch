@@ -1,4 +1,4 @@
-# watch ![watch icon](https://cdn0.iconfinder.com/data/icons/sport-2-android-l-lollipop-icon-pack/24/stopwatch-24.png "Logo Title Text 1")
+# watch ![watch icon](https://cdn0.iconfinder.com/data/icons/sport-2-android-l-lollipop-icon-pack/24/stopwatch-24.png "Logo")
 Time-based sessions in Python 2 and 3
 
 ---

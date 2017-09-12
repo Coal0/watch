@@ -5,7 +5,8 @@ Time-based sessions in Python 2 and 3
 
 Using watch, it's easy to restrict access to sensitive databases and files.<br />
 Watch is compatible with Python 2 and 3 and has been tested on Python 2.7.1 as well as Python 3.6.0.<br />
-To get started with watch, check out [the guide](https://github.com/Coal0/watch/blob/master/guide.md).
+To get started with watch, check out [the guide](https://github.com/Coal0/watch/blob/master/guide.md).<br />
+To report a bug, see [bug reports](#bug-reports).
 
 <br />
 
